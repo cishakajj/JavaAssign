@@ -8,10 +8,8 @@ public class bookMain {
     String bookAuthor;
     boolean isAvailable = true;
     
-    // Your exact original database structure
     Map<String, Map<String, Object>> Books = new HashMap<>();
 
-    // Constructor with the parameters matching your original design
     public bookMain(String bName, String bId, String bAuthor, boolean isAvailable) {
         this.bookName = bName;
         this.bookId = bId;
@@ -19,7 +17,6 @@ public class bookMain {
         this.isAvailable = isAvailable;
     }
 
-    // Fixed Scanner to be passed in from the main menu
     void AddN(Scanner sc) {
         System.out.println("Enter the book name:");
         bookName = sc.nextLine();
@@ -40,13 +37,13 @@ public class bookMain {
         bookMap.put("bookName", bookName);
         bookMap.put("bookId", bookId);
         bookMap.put("bookAuthor", bookAuthor);
-        bookMap.put("isAvailable?:", true); // Starts out available
+        bookMap.put("isAvailable?:", true); // the book is initially available
         
         Books.put(bookId, bookMap);
         System.out.println("Book successfully added!");
     }
 
-    // Helper method to find a book using your exact parameters
+    // Method to get to search for a book(which is a map too) in the books map. That is why the return value is a map too.
     Map<String, Object> findBookById(Map<String, Map<String, Object>> bookDB, String SearchId) {
         return bookDB.get(SearchId);
     }
@@ -66,7 +63,7 @@ public class bookMain {
         }
     }
 
-    // Completed your empty viewAllB method
+
     void viewAllB() {
         System.out.println("------View All Books--------");
         if (Books.isEmpty()) {
@@ -78,7 +75,7 @@ public class bookMain {
         }
     }
 
-    // Completed your search by title/author/ID capability requested on the paper
+    //Searching a book by either the title, the author or the ID.
     void searchBookFlexible(Scanner sc) {
         System.out.println("Enter search term (Title, Author, or ID):");
         String query = sc.nextLine().toLowerCase();
