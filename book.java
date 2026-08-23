@@ -9,12 +9,12 @@ public class book {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         
-        // Instantiate your bookMain and Member objects with default constructor values
+        //Initializing.
         bookMain bookManager = new bookMain("", "", "", true);
         Member memberManager = new Member("", "");
 
         int mainChoice;
-
+        //The do-while loop which is going to help us navigate the menus and submenus and at some point exit the program.
         do {
             System.out.println("\n=========================================");
             System.out.println("       LIBRARY MANAGEMENT SYSTEM        ");
